@@ -7,6 +7,11 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
+// Routes
+// Login and Sign Up Routes
+
+app.use("/auth", require("./routes/jwtAuth"));
+
 app.get("/", (req, res) => {
   res.send("Khabar server running.");
 });
