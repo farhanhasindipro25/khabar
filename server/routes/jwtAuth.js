@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const pool = require("../db");
 const bcrypt = require("bcrypt");
+const generateJSONWebToken = require("../utilities/generateJWT");
 
 // User Sign Up
 
@@ -27,9 +28,12 @@ router.post("/signup", async (req, res) => {
       "INSERT INTO users (userName,userEmail, userPassword) VALUES ($1, $2, $3) RETURNING *",
       [name, email, bcryptPassword]
     );
-    res.json(newUser.rows[0]);
+    // res.json(newUser.rows[0]);
 
     //Generating a JSON Web Token for the user.
+    const token = generateJSONWebToken(newUser.rows[0].userId);
+
+    res.json({ token });
   } catch (error) {
     console.error(error.message);
     res.status(500).send("The server encountered an error.");
