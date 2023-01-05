@@ -40,4 +40,38 @@ router.post("/signup", async (req, res) => {
   }
 });
 
+// User login
+router.post("/login", async (req, res) => {
+  try {
+    // Destructuring email and password from req.body.
+    const { email, password } = req.body;
+    // console.log(password);
+
+    // Checking for existing users.
+    const user = await pool.query("SELECT * FROM users WHERE userEmail = $1", [
+      email,
+    ]);
+    if (user.rows.length === 0) {
+      return res.status(401).json("You have entered an invalid email address");
+    }
+    // console.log(user.rows[0]);
+    // Checking if the inputted password is the same as the password stored in the database.
+    const isPasswordValid = await bcrypt.compare(
+      password,
+      user.rows[0].userpassword
+    );
+    // console.log(isPasswordValid);
+    if (!isPasswordValid) {
+      return res.status(401).json("Incorrect Password!");
+    }
+
+    // Assign a JSON Web Token to the logged in user.
+    const token = generateJSONWebToken(user.rows[0].userId);
+    res.json({ token });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("The server encountered an error.");
+  }
+});
+
 module.exports = router;
