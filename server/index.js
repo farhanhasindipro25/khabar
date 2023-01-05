@@ -9,8 +9,7 @@ app.use(cors());
 
 // Routes
 // Login and Sign Up Routes
-
-app.use("/auth", require("./routes/jwtAuth"));
+app.use("/auth", require("./routes/userRegistration"));
 
 app.get("/", (req, res) => {
   res.send("Khabar server running.");

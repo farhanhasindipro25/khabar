@@ -3,9 +3,9 @@ const pool = require("../db");
 const bcrypt = require("bcrypt");
 const generateJSONWebToken = require("../utilities/generateJWT");
 const checkCredentialValidity = require("../middleware/checkCredentialValidity");
+const jwtAuthorization = require("../middleware/jwtAuthorization");
 
 // User Sign Up
-
 router.post("/signup", checkCredentialValidity, async (req, res) => {
   try {
     // Destructuring name, email and password from req.body.
@@ -69,6 +69,16 @@ router.post("/login", checkCredentialValidity, async (req, res) => {
     // Assign a JSON Web Token to the logged in user.
     const token = generateJSONWebToken(user.rows[0].userId);
     res.json({ token });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("The server encountered an error.");
+  }
+});
+
+// Verifying JSON Web Token when browser is refreshed
+router.get("/token-verification", jwtAuthorization, async (req, res) => {
+  try {
+    res.json(true);
   } catch (error) {
     console.error(error.message);
     res.status(500).send("The server encountered an error.");
