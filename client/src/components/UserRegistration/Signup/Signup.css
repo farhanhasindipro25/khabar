@@ -1,0 +1,54 @@
+.signup-text .signup-heading{
+    text-align: center;
+    margin-top: 200px;
+    font-weight: 600;
+}
+
+.signup-text .signup-sub-heading{
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.signup-form .input-name, .signup-form .input-email, .signup-form .input-password{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+    margin: 15px auto;
+}
+.signup-form .input-name label, .signup-form .input-email label, .signup-form .input-password label{
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.signup-form .input-name input, .signup-form .input-email input, .signup-form .input-password input{
+    border-radius: 10px;
+    border: 0.25px solid #000;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.signup-button{
+    display: flex;
+    justify-content: center;
+}
+.signup-button button{
+    padding: 15px 326px;
+    border-radius: 10px;
+    border: none;
+    background-color: #00C49A;
+    color: #181c29;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.signup-toggler{
+    text-align: center;
+    font-size: 15px;
+}
+.signup-toggler .to-login{
+    color: #00a884;
+    font-weight: 500;
+    text-decoration: none;
+}
