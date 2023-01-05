@@ -3,7 +3,7 @@ const pool = require("../db");
 const bcrypt = require("bcrypt");
 const generateJSONWebToken = require("../utilities/generateJWT");
 const checkCredentialValidity = require("../middleware/checkCredentialValidity");
-const jwtAuthorization = require("../middleware/jwtAuthorization");
+const verifyToken = require("../middleware/verifyToken");
 
 // User Sign Up
 router.post("/signup", checkCredentialValidity, async (req, res) => {
@@ -32,7 +32,8 @@ router.post("/signup", checkCredentialValidity, async (req, res) => {
     // res.json(newUser.rows[0]);
 
     //Generating a JSON Web Token for the user.
-    const token = generateJSONWebToken(newUser.rows[0].userId);
+    // console.log(newUser);
+    const token = generateJSONWebToken(newUser.rows[0].userid);
 
     res.json({ token });
   } catch (error) {
@@ -67,7 +68,8 @@ router.post("/login", checkCredentialValidity, async (req, res) => {
     }
 
     // Assign a JSON Web Token to the logged in user.
-    const token = generateJSONWebToken(user.rows[0].userId);
+    const token = generateJSONWebToken(user.rows[0].userid);
+    // console.log(user.rows[0].userid);
     res.json({ token });
   } catch (error) {
     console.error(error.message);
@@ -76,9 +78,9 @@ router.post("/login", checkCredentialValidity, async (req, res) => {
 });
 
 // Verifying JSON Web Token when browser is refreshed
-router.get("/token-verification", jwtAuthorization, async (req, res) => {
+router.get("/verify", verifyToken, async (req, res) => {
   try {
-    res.json(true);
+    res.status(200).json(true);
   } catch (error) {
     console.error(error.message);
     res.status(500).send("The server encountered an error.");

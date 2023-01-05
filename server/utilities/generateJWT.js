@@ -5,7 +5,8 @@ const generateJSONWebToken = (userId) => {
   const payload = {
     user: userId,
   };
-  return jwt.sign(payload, process.env.ACCESS_TOKEN, { expiresIn: "1hr" });
+  console.log(payload);
+  return jwt.sign(payload, process.env.ACCESS_TOKEN, { expiresIn: "5hr" });
 };
 
 module.exports = generateJSONWebToken;

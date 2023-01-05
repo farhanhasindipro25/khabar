@@ -11,6 +11,9 @@ app.use(cors());
 // Login and Sign Up Routes
 app.use("/auth", require("./routes/userRegistration"));
 
+// Menu
+app.use("/menu", require("./routes/menu"));
+
 app.get("/", (req, res) => {
   res.send("Khabar server running.");
 });

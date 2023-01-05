@@ -8,19 +8,18 @@ module.exports = function (req, res, next) {
   if (req.path === "/signup") {
     // Checking if all input fields have values or not.
     if (![email, name, password].every(Boolean)) {
-      return res.json("You must fillup all fields!");
+      return res.status(401).json("You must fillup all fields!");
       // Checking if the email is valid according to the regular expression.
     } else if (!isEmailValid(email)) {
-      return res.json("Please enter a valid Email ID!");
+      return res.status(401).json("Please enter a valid Email ID!");
     }
   } else if (req.path === "/login") {
     if (![email, password].every(Boolean)) {
-      return res.json("You must fillup all fields!");
+      return res.status(401).json("You must fillup all fields!");
       // Checking if the email is valid according to the regular expression.
     } else if (!isEmailValid(email)) {
-      return res.json("Please enter a validEemail ID!");
+      return res.status(401).json("Please enter a validEemail ID!");
     }
   }
-
   next();
 };
