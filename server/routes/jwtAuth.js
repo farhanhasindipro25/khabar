@@ -2,10 +2,11 @@ const router = require("express").Router();
 const pool = require("../db");
 const bcrypt = require("bcrypt");
 const generateJSONWebToken = require("../utilities/generateJWT");
+const checkCredentialValidity = require("../middleware/checkCredentialValidity");
 
 // User Sign Up
 
-router.post("/signup", async (req, res) => {
+router.post("/signup", checkCredentialValidity, async (req, res) => {
   try {
     // Destructuring name, email and password from req.body.
     const { name, email, password } = req.body;
@@ -41,7 +42,7 @@ router.post("/signup", async (req, res) => {
 });
 
 // User login
-router.post("/login", async (req, res) => {
+router.post("/login", checkCredentialValidity, async (req, res) => {
   try {
     // Destructuring email and password from req.body.
     const { email, password } = req.body;
