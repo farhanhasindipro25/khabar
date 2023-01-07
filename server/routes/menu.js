@@ -3,7 +3,7 @@ const pool = require("../db");
 const verifyToken = require("../middleware/verifyToken");
 
 // API for reading all the items from the menuitems DB
-router.get("/", verifyToken, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const fullMenu = await pool.query("SELECT * FROM menuitems");
     // console.log(fullMenu.rows.length);
