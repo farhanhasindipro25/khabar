@@ -6,6 +6,7 @@ const checkCredentialValidity = require("../middleware/checkCredentialValidity")
 const verifyToken = require("../middleware/verifyToken");
 
 // User Sign Up
+// API for a new user sign up.
 router.post("/signup", checkCredentialValidity, async (req, res) => {
   try {
     // Destructuring name, email and password from req.body.
@@ -43,6 +44,7 @@ router.post("/signup", checkCredentialValidity, async (req, res) => {
 });
 
 // User login
+// API for user login
 router.post("/login", checkCredentialValidity, async (req, res) => {
   try {
     // Destructuring email and password from req.body.
@@ -77,7 +79,7 @@ router.post("/login", checkCredentialValidity, async (req, res) => {
   }
 });
 
-// Verifying JSON Web Token when browser is refreshed
+// API for verifying JSON Web Token when browser is refreshed
 router.get("/verify", verifyToken, async (req, res) => {
   try {
     res.status(200).json(true);

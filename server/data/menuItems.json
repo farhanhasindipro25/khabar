@@ -1,0 +1,122 @@
+[
+    {
+      "img": "https://i.ibb.co/Y0xkHZK/buffalo-wings-burger-express.jpg",
+      "price": 124,
+      "item": "Buffalo Wings",
+      "description":"Prepared with chicken wings, ranch dressing, hot sauce, honey & butter",
+      "restuarant": "Burger Xpress",
+      "restuarantLocation":"Mohammadpur"
+    },
+    {
+      "img": "https://i.ibb.co/866Q9Gx/chicken-cheese-burger-burger-express.png",
+      "price":189,
+      "item": "Chicken Cheese Burger",
+      "description":"Prepared with 1x single chicken patty, 1x sliced cheddar cheese, secret sauce, sliced onion, tomato & lettuce",
+      "restuarant": "Burger Xpress",
+      "restuarantLocation":"Mohammadpur"
+    },
+    {
+      "img": "https://i.ibb.co/3F7GhGQ/burger-king-fried-chicken-x8.png",
+      "price": 2049,
+      "item": "Fried Chicken - 16 pcs",
+      "description":"https://i.ibb.co/3F7GhGQ/burger-king-fried-chicken-x8.png",
+      "restuarant": "Burger King",
+      "restuarantLocation":"Dhanmondi"
+    },
+    {
+      "img": "https://i.ibb.co/Jq7yn5Y/supercharger-burger-kfc.png",
+      "price": 269,
+      "item": "Super Charger Burger",
+      "description":"Spicy, crunchy two chicken strips in a bigger & longer sesame bun, combined with fresh crunchy lettuce, sweet mayo with an amazing blend two different sauces",
+      "restuarant": "KFC",
+      "restuarantLocation":"Dhanmondi"
+    },
+    {
+      "img": "https://i.ibb.co/wrR3PNt/Rice-strip-combo-kfc.png",
+      "price": 499,
+      "item": "Rice and Strips Combo",
+      "description":"https://i.ibb.co/wrR3PNt/Rice-strip-combo-kfc.png",
+      "restuarant": "KFC",
+      "restuarantLocation":"Dhanmondi"
+    },
+    {
+      "img": "https://i.ibb.co/Bqqw3RF/peri-peri-chicken-kfc.png",
+      "price": 299,
+      "item": "Peri Peri Grilled Chicken - 2pcs",
+      "description":"Bathed in peri peri marinade, grilled to add caramelization, then a blanket of peri peri glaze added to seal the flavors & finally topped with special herbs - have a bite of kfc peri peri grilled chicken for 2 pcs only at Tk.299 which is sure to play with your taste buds.",
+      "restuarant": "KFC",
+      "restuarantLocation":"Dhanmondi"
+    },
+    {
+      "img": "https://i.ibb.co/5WBJtFj/shroom-cheez.png",
+      "price": 809,
+      "item": "All Bout The Shrooms",
+      "description":"Topped with button & black mushroom fungi combo-based with white sauce, mozzarella, cheddar & feta, spicy onion, roasted tomato, green sauce & sea salt",
+      "restuarant": "Cheez",
+      "restuarantLocation":"Banani"
+    },
+    {
+      "img": "https://i.ibb.co/Tk8LByG/spicy-sausage-cheez.png",
+      "price": 475,
+      "item": "Spicy Sausage",
+      "description":"Topped with soft chunks of spicy sausages surrounded by parmesan cheese infused with kisan cheese which finally gets topped off with our special naga sauce to give your tastebuds, that extra kick.",
+      "restuarant": "Cheez",
+      "restuarantLocation":"Banani"
+    },
+    {
+      "img": "https://i.ibb.co/0KbYq7d/chicken-alfredo-digger.png",
+      "price": 370,
+      "item": "Chicken Alfredo Pizza",
+      "description":"Topped with chicken, alfredo sauce & 3 types of cheese.",
+      "restuarant": "Diggger",
+      "restuarantLocation":"Mirpur"
+    },
+    {
+      "img": "https://i.ibb.co/z2MnPQc/pepperonica-digger.png",
+      "price": 320,
+      "item": "The Pepperonica Pizza",
+      "description":"Topped with pepperoni, mozzarella cheese & pizza sauce.",
+      "restuarant": "Diggger",
+      "restuarantLocation":"Mirpur"
+    },
+    {
+      "img": "https://i.ibb.co/pRsRbJR/meatball-digger.png",
+      "price": 440,
+      "item": "Meatball Pizza",
+      "description":"Topped with meat ball & mozzarella cheese.",
+      "restuarant": "Diggger",
+      "restuarantLocation":"Mirpur"
+    },
+    {
+      "img": "https://i.ibb.co/xqk3gmd/cheesy-bites-takeout.png",
+      "price": 150,
+      "item": "Cheesy Bites",
+      "description":"Deep fried chicken nuggets with rich cheese filling.",
+      "restuarant": "Takeout",
+      "restuarantLocation":"Uttara"
+    },
+    {
+      "img": "https://i.ibb.co/NTKZGWs/classic-family-meal-takeout.png",
+      "price": 1300,
+      "item": "A Classic Family Meal",
+      "description":"Consists of 4 pcs bbq chicken burgers, 2 portions of large fries & 4 coke - 250 ml.",
+      "restuarant": "Takeout",
+      "restuarantLocation":"Uttara"
+    },
+    {
+      "img": "https://i.ibb.co/R0z8TLR/combo-takeout.png",
+      "price": 520,
+      "item": "Delightful Combo",
+      "description":"Consists of a portion of french fries, choice of 1 pc beef cheese delight burger or chicken cheese delight burger & 1 regular brownie shake.",
+      "restuarant": "Takeout",
+      "restuarantLocation":"Uttara"
+    },
+    {
+      "img": "https://i.ibb.co/ccCrjq0/chicken-supreme-takeout.png",
+      "price": 450,
+      "item": "Chicken Supreme",
+      "description":"Massive double chicken patty of patty cooked with bbq sauce & stuffed with cheese, topped with chicken bacon & slice of cheddar cheese. It is served with secret sauce of your flavor, fresh onions, lettuce & cushion of comfortable buns.",
+      "restuarant": "Takeout",
+      "restuarantLocation":"Uttara"
+    }
+  ]
