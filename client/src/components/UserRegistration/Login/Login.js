@@ -3,11 +3,11 @@ import "./Login.css";
 import useTitle from "../../../hooks/useTitle";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   useTitle("Login");
   const [loginError, setLoginError] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const {
     register,
@@ -36,7 +36,7 @@ const Login = () => {
       const result = await response.json();
       localStorage.setItem("token", result.token);
       console.log(result);
-      setIsLoggedIn(true);
+      toast.success("Logged In Successfully!");
       navigate("/menu");
     } catch (error) {
       console.error(error.message);

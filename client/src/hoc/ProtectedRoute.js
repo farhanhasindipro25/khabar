@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import AppBar from "../components/AppBar/AppBar";
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
@@ -8,7 +9,12 @@ const ProtectedRoute = ({ children }) => {
   if (!token) {
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
   }
-  return <div>{children}</div>;
+  return (
+    <div>
+      <AppBar></AppBar>
+      {children}
+    </div>
+  );
 };
 
 export default ProtectedRoute;

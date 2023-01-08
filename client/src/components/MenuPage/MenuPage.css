@@ -23,3 +23,13 @@
     padding: 30px;
     border-radius: 20px;
 }
+
+.no-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-data h1{
+    font-size: 20px;
+    font-weight: 600;
+}

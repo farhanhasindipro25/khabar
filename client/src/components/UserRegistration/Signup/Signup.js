@@ -3,6 +3,7 @@ import "./Signup.css";
 import useTitle from "../../../hooks/useTitle";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 const Signup = () => {
   useTitle("Sign Up");
@@ -13,7 +14,6 @@ const Signup = () => {
   } = useForm();
 
   const [signUpError, setSignUpError] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const handleSignup = async (data) => {
@@ -37,7 +37,7 @@ const Signup = () => {
       const result = await response.json();
       localStorage.setItem("token", result.token);
       console.log(result);
-      setIsLoggedIn(true);
+      toast.success(`Welcome to Khabar, ${name}!`);
       navigate("/menu");
     } catch (error) {
       console.error(error.message);
