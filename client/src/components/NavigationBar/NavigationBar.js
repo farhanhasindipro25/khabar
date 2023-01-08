@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./NavigationBar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const NavigationBar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -10,6 +10,7 @@ const NavigationBar = () => {
   const handleLogOut = () => {
     setIsLoggedIn(false);
     navigate("/login");
+    // localStorage.setItem("token", "");
   };
   return (
     <div>
@@ -18,6 +19,7 @@ const NavigationBar = () => {
           <React.Fragment>
             <Link to="/menu">Menu</Link>
             <Link onClick={handleLogOut}>Logout</Link>
+            <Navigate to="/login"></Navigate>
           </React.Fragment>
         ) : (
           <React.Fragment>

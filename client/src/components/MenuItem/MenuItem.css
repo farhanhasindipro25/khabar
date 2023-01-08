@@ -1,3 +1,50 @@
-.card-container img{
-    width: 100%;
+.card-container{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 4px 4px rgb(245, 245, 245);
+    border: 0.1px solid rgb(247, 247, 247);
+    padding: 20px;
+    border-radius: 20px;
+}
+.card-container .item-img{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+.item-title{
+    font-size: 17px;
+}
+.item-title, .item-price, .place, .description{
+    text-align: center;
+}
+.place{
+    font-size: 15px;
+}
+.price{
+    font-weight: 400;
+    font-size: 13px;
+}
+.price-amount{
+    color:#00C49A;
+}
+.description{
+    font-size: 13px;
+    margin: 0px 8px;
+    padding-bottom: 15px;
+}
+.cart-btn{
+    display: flex;
+    justify-content: center;
+}
+.cart-btn button{
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #00C49A;
+    color: #181c29;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cart-btn button:hover{
+    background-color: #01b991;
 }
