@@ -27,9 +27,4 @@ const addItemToLS = (id) => {
   localStorage.setItem("khabar-cart", JSON.stringify(khabarCart));
 };
 
-// Clearing the whole cart: Deleting the cart from Local Storage
-const removeItemFromLS = () => {
-//   localStorage.removeItem("khabar-cart");
-};
-
-export { addItemToLS, getCartFromLS, removeItemFromLS };
+export { addItemToLS, getCartFromLS};

@@ -6,7 +6,6 @@ module.exports = function (req, res, next) {
   try {
     // Taking the token from the header
     const token = req.headers.authorization.split(" ")[1];
-    console.log(token);
     // console.log("Token", token);
 
     // Checking if a JSON WEB TOKEN already exists or not

@@ -12,12 +12,14 @@
 }
 .item-title{
     font-size: 17px;
+    font-weight: 700;
 }
 .item-title, .item-price, .place, .description{
     text-align: center;
 }
 .place{
-    font-size: 15px;
+    font-size: 13px;
+    font-weight: 500;
 }
 .price{
     font-weight: 400;

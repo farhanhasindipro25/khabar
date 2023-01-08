@@ -58,3 +58,10 @@
 .clear-cart-btn button:hover{
     background-color: #2c2b2b;
 }
+
+.order-summary .summary-title{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 40px;
+}

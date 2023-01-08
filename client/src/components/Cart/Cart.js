@@ -21,35 +21,41 @@ const Cart = ({ cart }) => {
       <div>
         <h2 className="cart-title">Your Cart</h2>
       </div>
-      {cart.map((item) => (
-        <React.Fragment key={item.itemid}>
-          <div className="item-info">
-            <h2 className="item-title">{item.menuitem}</h2>
-            <h4 className="item-price">
-              <span className="price-amount">{item.itemprice} BDT </span>
-            </h4>
-          </div>
-        </React.Fragment>
-      ))}
-      <hr />
-      <div className="total-items">
-        <h2 className="total-items-title">Total items:</h2>
-        <h2 className="total-items-title">{cart.length}</h2>
-      </div>
-      <div className="total-price">
-        <h2 className="total-price-title">Total Price:</h2>
-        <h2 className="total-price-title price-amount">{total} BDT</h2>
-      </div>
-      <div className="order-btn">
-        <button id="place-order" onClick={handlePlaceOrder}>
-          PLACE ORDER
-        </button>
+      <div>
+        {cart.map((item) => (
+          <React.Fragment key={item.itemid}>
+            <div className="item-info">
+              <h2 className="item-title">{item.menuitem}</h2>
+              <h4 className="item-price">
+                <span className="price-amount">{item.itemprice} BDT </span>
+              </h4>
+            </div>
+          </React.Fragment>
+        ))}
+        <hr />
+        <div className="total-price">
+          <h2 className="total-price-title">Total Price:</h2>
+          <h2 className="total-price-title price-amount">{total} BDT</h2>
+        </div>
+        <div className="order-btn">
+          <button id="place-order" onClick={handlePlaceOrder}>
+            PLACE ORDER
+          </button>
+        </div>
       </div>
 
       {orderPlaced && (
         <React.Fragment>
-          <div>
-            <h2>Order Summary</h2>
+          <div className="order-summary">
+            <h2 className="summary-title">Order Summary</h2>
+            <div className="total-items">
+              <h2 className="total-items-title">Total items:</h2>
+              <h2 className="total-items-title">{cart.length}</h2>
+            </div>
+            <div className="total-price">
+              <h2 className="total-price-title">Total Price:</h2>
+              <h2 className="total-price-title price-amount">{total} BDT</h2>
+            </div>
           </div>
         </React.Fragment>
       )}

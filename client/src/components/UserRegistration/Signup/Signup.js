@@ -64,7 +64,7 @@ const Signup = () => {
               placeholder="Enter Your Full Name"
             />
             {errors.name && (
-              <p className="text-red-400 ml-1 mt-3" role="alert">
+              <p className="error" role="alert">
                 {errors.name?.message}
               </p>
             )}
@@ -77,13 +77,11 @@ const Signup = () => {
               placeholder="Enter Your Email ID"
             />
             {errors.email && (
-              <p className="text-red-400 ml-1 mt-3" role="alert">
+              <p className="error" role="alert">
                 {errors.email?.message}
               </p>
             )}
-            {signUpError && (
-              <p className="text-error text-center mt-4">{signUpError}</p>
-            )}
+            {signUpError && <p className="signup-error">{signUpError}</p>}
           </div>
           <div className="input-password">
             <label htmlFor="password">Your Password</label>
@@ -105,13 +103,11 @@ const Signup = () => {
               placeholder="Enter Your Password"
             />
             {errors.password && (
-              <p className="text-red-400 ml-1" role="alert">
+              <p className="error" role="alert">
                 {errors.password?.message}
               </p>
             )}
-            {signUpError && (
-              <p className="text-error text-center mt-4">{signUpError}</p>
-            )}
+            {signUpError && <p className="signup-error">{signUpError}</p>}
           </div>
           <div className="signup-button">
             <button>SIGN UP</button>

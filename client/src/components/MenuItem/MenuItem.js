@@ -16,7 +16,7 @@ const MenuItem = ({ item, handleAddToCart }) => {
         <img className="item-img" src={itemimage} alt="" />
         <h3 className="item-title">{menuitem}</h3>
         <h4 className="item-price">
-          Price <span className="price-amount">{itemprice} BDT</span>
+          <span className="price-amount">{itemprice} BDT</span>
         </h4>
         <h4 className="place">
           {restuarant}, {restuarantlocation}
