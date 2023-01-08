@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Cart.css";
+import { toast } from "react-hot-toast";
 
 const Cart = ({ cart }) => {
   //   console.log(cart);
@@ -7,6 +8,13 @@ const Cart = ({ cart }) => {
   for (const product of cart) {
     total += parseInt(product.itemprice);
   }
+
+  const [orderPlaced, setOrderPlaced] = useState(false);
+
+  const handlePlaceOrder = () => {
+    toast.success("Order Placed Successfully.");
+    setOrderPlaced(true);
+  };
 
   return (
     <div>
@@ -33,8 +41,18 @@ const Cart = ({ cart }) => {
         <h2 className="total-price-title price-amount">{total} BDT</h2>
       </div>
       <div className="order-btn">
-        <button>PLACE ORDER</button>
+        <button id="place-order" onClick={handlePlaceOrder}>
+          PLACE ORDER
+        </button>
       </div>
+
+      {orderPlaced && (
+        <React.Fragment>
+          <div>
+            <h2>Order Summary</h2>
+          </div>
+        </React.Fragment>
+      )}
     </div>
   );
 };

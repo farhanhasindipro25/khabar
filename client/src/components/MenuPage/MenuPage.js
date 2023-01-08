@@ -4,39 +4,19 @@ import MenuItem from "../MenuItem/MenuItem";
 import Cart from "../Cart/Cart";
 import useTitle from "../../hooks/useTitle";
 import { addItemToLS, getCartFromLS } from "../../utilities/cartFunctions";
+import { useQuery } from "@tanstack/react-query";
+import Loader from "../Loader/Loader";
+import { useNavigate } from "react-router-dom";
 
 const MenuPage = () => {
   useTitle("Menu");
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/menu", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setItems(data);
-      })
-      .catch((error) => console.error(error));
-  }, []);
-
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
-  // Retrieving all the selected menu items of a specific user from Local Storage
-  useEffect(() => {
-    const khabarCart = getCartFromLS();
-    const savedCart = [];
-    for (const id in khabarCart) {
-      const selectedItem = items.find((item) => item.itemid === id);
-      if (selectedItem) {
-        // console.log(selectedItem);
-        savedCart.push(selectedItem);
-      }
-    }
-    setCart(savedCart);
-  }, [items]);
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   const handleAddToCart = (item) => {
     const newCart = [...cart, item];
@@ -44,18 +24,64 @@ const MenuPage = () => {
     addItemToLS(item.itemid);
   };
 
+  const { data: items, isLoading } = useQuery({
+    queryKey: ["items"],
+    queryFn: async () => {
+      try {
+        const res = await fetch("http://localhost:5000/menu", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await res.json();
+        // console.log(data);
+        return data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  });
+
+  // Retrieving all the selected menu items of a specific user from Local Storage
+  useEffect(() => {
+    const khabarCart = getCartFromLS();
+    const savedCart = [];
+    if (items) {
+      for (const id in khabarCart) {
+        const selectedItem = items?.find((item) => item.itemid === id);
+        if (selectedItem) {
+          // console.log(selectedItem);
+          savedCart.push(selectedItem);
+        }
+      }
+    }
+    setCart(savedCart);
+  }, [items]);
+
+  if (isLoading) {
+    return <Loader></Loader>;
+  }
+
   return (
     <div>
+      <button onClick={handleLogOut}>Log out</button>
       <div className="menupage-container">
-        <div className="items-container">
-          {items.map((item) => (
-            <MenuItem
-              key={item.itemid}
-              item={item}
-              handleAddToCart={handleAddToCart}
-            ></MenuItem>
-          ))}
-        </div>
+        {items?.length > 0 ? (
+          <div className="items-container">
+            {items?.map((item) => (
+              <MenuItem
+                key={item.itemid}
+                item={item}
+                handleAddToCart={handleAddToCart}
+              ></MenuItem>
+            ))}
+          </div>
+        ) : (
+          <div>
+            <h1>No data found</h1>
+          </div>
+        )}
         <div className="cart-container">
           <Cart cart={cart}></Cart>
         </div>
