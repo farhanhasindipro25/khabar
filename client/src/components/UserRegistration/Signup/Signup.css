@@ -43,6 +43,10 @@
     font-size: 14px;
 }
 
+.signup-button button:hover{
+    background-color: #01b991;
+}
+
 .signup-toggler{
     text-align: center;
     font-size: 15px;
@@ -56,4 +60,27 @@
 .error, .signup-error{
     color: red;
     font-size: 14px;
+}
+
+@media only screen and (max-width:667px){
+    .signup-text .signup-heading{
+        font-size: 15px;
+    }
+    
+    .signup-text .signup-sub-heading{
+        font-size: 12px;
+    }
+    .signup-form .input-name, .signup-form .input-email, .signup-form .input-password{
+        width: 350px;
+        margin: 15px auto;
+    }
+    .signup-form .input-name label, .signup-form .input-email label, .signup-form .input-password label{
+        font-size: 12px;
+    }
+    .signup-button button{
+        padding: 15px 146px;
+    }
+    .signup-toggler{
+        font-size: 12px;
+    }
 }

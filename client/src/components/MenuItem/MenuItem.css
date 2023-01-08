@@ -50,3 +50,11 @@
 .cart-btn button:hover{
     background-color: #01b991;
 }
+
+@media only screen and (max-width:667px){
+    .card-container .item-img{
+        width: 270px;
+        height: 160px;
+        border-radius: 10px;
+    }
+}
