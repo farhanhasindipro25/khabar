@@ -14,6 +14,7 @@
 4. jsonwebtoken - For the generation, and verification of tokens for new users.
 
 **DATABASE NAME: khabardabar**
+
 **DATABASE TABLES: users and menuitems**
 
 **RESTFUL APIs - User Registration (Signup and Login)**
